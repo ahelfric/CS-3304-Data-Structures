@@ -1,0 +1,93 @@
+// FILE: set.template
+
+// INVARIANT:
+//	1. THe items of the set are stored in a B-tree, satisfying the size b-tree rules
+//	2. The number of entries in the tree's root is stored int he member variable data_count,
+//     and the number of subrees of the roos is stored in the member variable child_count
+//	3. The root's entries are stored in data[0] through data[data_count-1]
+//	4. If the root has subrees, then th ese subrees are stored in sets pointed to by the
+//	   pointers subset[0] through subset[child_count-1]
+
+#ifndef MAIN_SAVITCH_SET_H
+#define MAIN_SAVITCH_SET_H
+
+#include <cstdlib> 		// Provides size_t
+
+//Testing code
+#include <iostream> 	//Provides cout
+
+namespace main_savitch_11
+
+{
+	//CONSTRUCTORS AND DECONSTRUCTOR
+	set::set() {
+		data_count = 0;
+		child_count = 0;
+	}
+	
+	set::set(const set& source) {
+		
+	}
+
+	set::~set() {
+		delete subset;
+		data_count = 0;
+		child_count = 0;
+	}
+
+	//MODIFICATION MEMBER FUNCTIONS
+	void set::operator =(const set& source) {
+
+	}
+
+	void set::clear() {
+
+	}
+
+	template <class Item>
+	bool insert(const Item& entry) {
+		return true;
+	}
+
+	template <class Item>
+	std::size_t erase(const Item& target) {
+		return 0;
+	}
+
+	//CONSTANT MEMBER FUNCTIONS
+	template <class Item>
+	std::size_t count(const Item& target) const {
+		return 0;
+	}
+
+	//TESTING FUNCTION
+	void set::print(int indent) const {
+
+	}
+
+	//HELPER MEMBER FUNCTIONS
+	template <class Item>
+	bool loose_insert(const Item& entry) {
+		return true;
+	}
+
+	template <class Item>
+	bool loose_erase(const Item& target) {
+		return true;
+	}
+
+	template <class Item>
+	void remove_biggest(ITem& removed_entry) {
+
+	}
+
+	void set::fix_excess(std::size_t i) {
+
+	}
+
+	void set::fix_shortage(std::size_t i) {
+
+	}
+}
+
+#endif
